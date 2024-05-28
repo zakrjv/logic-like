@@ -1,0 +1,28 @@
+@use "@/app/styles/variables";
+
+.tags {
+  margin-right: 24px;
+  padding: 12px;
+  width: 240px;
+  align-self: baseline;
+  border: 1px solid variables.$border;
+  border-radius: 18px;
+}
+
+.tags_item {
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &--current {
+    background-color: variables.$accent-main;
+    border-radius: 12px;
+    color: white;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(&--current) {
+      color: variables.$border;
+    }
+  }
+}

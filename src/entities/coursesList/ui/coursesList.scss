@@ -1,0 +1,32 @@
+@use "@/app/styles/variables";
+
+.courses-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: baseline;
+  gap: 18px;
+}
+
+.courses-list_item {
+  box-shadow: 0 10px 13px -4px variables.$shadow;
+  border-radius: 18px;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      color: variables.$border;
+    }
+  }
+}
+
+.courses-list_bg {
+  display: flex;
+  margin-bottom: 12px;
+  padding: 9px 0;
+  justify-content: center;
+  border-radius: 18px 18px 0 0;
+}
+
+.courses-list_title {
+  margin: 0 18px 18px 18px;
+}

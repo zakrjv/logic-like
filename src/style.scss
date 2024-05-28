@@ -1,0 +1,20 @@
+@import "app/styles/fonts";
+@import "app/styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 24px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 18px;
+  color: $font-main;
+}
+
+ul {
+  list-style: none;
+}
