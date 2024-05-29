@@ -11,17 +11,13 @@ interface Props {
 export function FilterTags(props: Props) {
   const { data, currentTag, setCurrentTag } = props;
 
-  const handleTagClick = (tag: string) => {
-    setCurrentTag(tag);
-  };
-
   return (
     <ul className={styles.tags}>
       {Object.keys(data).map(tag => (
         <li
           className={`${styles.item} ${currentTag === tag ? styles.itemCurrent : ""}`}
           key={tag}
-          onClick={() => handleTagClick(tag)}
+          onClick={() => setCurrentTag(tag)}
         >
           {tag}
         </li>
