@@ -9,12 +9,12 @@
   border-radius: 18px;
 }
 
-.tags_item {
+.item {
   padding: 12px;
   cursor: pointer;
   transition: 0.3s;
 
-  &--current {
+  &Current {
     background-color: variables.$accent-main;
     border-radius: 12px;
     color: white;

@@ -10,6 +10,5 @@
 - React;
 - FSD;
 - TypeScript;
-- SCSS;
-- EsLint and Prettier;
-- BEM.
+- SCSS modules;
+- EsLint and Prettier.

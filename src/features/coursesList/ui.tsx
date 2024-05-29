@@ -1,6 +1,6 @@
 import { ICourse } from "@/shared/types";
 import { filterCoursesByTag } from "@/shared/lib/helpers.ts";
-import "./styled.scss";
+import styles from "./styled.module.scss";
 
 interface Props {
   data: ICourse[];
@@ -12,22 +12,22 @@ export function CoursesList(props: Props) {
   const courses = filterCoursesByTag(data, currentTag);
 
   return (
-    <ul className={"courses-list"}>
+    <ul className={styles.courses}>
       {courses.map(course => (
-        <li className={"courses-list_item"} key={course.id}>
+        <li className={styles.course} key={course.id}>
           <div
-            className={"courses-list_bg"}
+            className={styles.head}
             style={{ backgroundColor: course.bgColor }}
           >
             <img
-              className={"courses-list_img"}
+              className={""}
               src={course.image}
               width={144}
               height={144}
-              alt={"Картинка курса"}
+              alt={`Картинка курса ${course.name}`}
             />
           </div>
-          <p className={"courses-list_title"}>{course.name}</p>
+          <p className={styles.title}>{course.name}</p>
         </li>
       ))}
     </ul>

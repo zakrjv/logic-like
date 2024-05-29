@@ -1,7 +1,7 @@
 import React from "react";
 import { ICourse } from "@/shared/types";
 import { getTagsList } from "@/shared/lib/helpers.ts";
-import "./styled.scss";
+import styles from "./styled.module.scss";
 
 interface Props {
   data: ICourse[];
@@ -18,9 +18,9 @@ export function FilterTags(props: Props) {
   };
 
   return (
-    <ul className={"tags"}>
+    <ul className={styles.tags}>
       <li
-        className={`tags_item ${currentTag === "all" ? "tags_item--current" : ""}`}
+        className={`${styles.item} ${currentTag === "all" ? styles.itemCurrent : ""}`}
         onClick={() => handleTagClick("all")}
       >
         Все темы
@@ -28,7 +28,7 @@ export function FilterTags(props: Props) {
 
       {tags.map(tag => (
         <li
-          className={`tags_item ${currentTag === tag ? "tags_item--current" : ""}`}
+          className={`${styles.item} ${currentTag === tag ? styles.itemCurrent : ""}`}
           key={tag}
           onClick={() => handleTagClick(tag)}
         >

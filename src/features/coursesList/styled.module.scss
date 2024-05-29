@@ -1,13 +1,13 @@
 @use "src/shared/styles/variables";
 
-.courses-list {
+.courses {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-content: baseline;
   gap: 18px;
 }
 
-.courses-list_item {
+.course {
   box-shadow: 0 10px 13px -4px variables.$shadow;
   border-radius: 18px;
   cursor: pointer;
@@ -19,7 +19,7 @@
   }
 }
 
-.courses-list_bg {
+.head {
   display: flex;
   margin-bottom: 12px;
   padding: 9px 0;
@@ -27,6 +27,6 @@
   border-radius: 18px 18px 0 0;
 }
 
-.courses-list_title {
+.title {
   margin: 0 18px 18px 18px;
 }

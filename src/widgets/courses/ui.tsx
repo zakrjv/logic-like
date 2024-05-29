@@ -3,7 +3,7 @@ import { FilterTags } from "@/features/filterTags";
 import { CoursesList } from "@/features/coursesList";
 import { getCourses } from "@/shared/api/base.ts";
 import { ICourse } from "@/shared/types";
-import "./styled.scss";
+import styles from "./styled.module.scss";
 
 export function Courses() {
   const [courses, setCourses] = useState<ICourse[]>([]);
@@ -18,7 +18,7 @@ export function Courses() {
   }, []);
 
   return (
-    <section className={"courses"}>
+    <section className={styles.courses}>
       <FilterTags
         data={courses}
         currentTag={currentTag}
