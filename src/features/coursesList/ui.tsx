@@ -1,6 +1,6 @@
 import { ICourse } from "@/shared/types";
-import "./coursesList.scss";
 import { filterCoursesByTag } from "@/shared/lib/helpers.ts";
+import "./styled.scss";
 
 interface Props {
   data: ICourse[];

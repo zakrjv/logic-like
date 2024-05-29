@@ -1,7 +1,7 @@
 import React from "react";
 import { ICourse } from "@/shared/types";
 import { getTagsList } from "@/shared/lib/helpers.ts";
-import "./filterTags.scss";
+import "./styled.scss";
 
 interface Props {
   data: ICourse[];

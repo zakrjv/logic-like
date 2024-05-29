@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { FilterTags } from "@/features/filterTags";
-import { CoursesList } from "@/entities/coursesList";
+import { CoursesList } from "@/features/coursesList";
 import { getCourses } from "@/shared/api/base.ts";
 import { ICourse } from "@/shared/types";
-import "./courses.scss";
+import "./styled.scss";
 
 export function Courses() {
   const [courses, setCourses] = useState<ICourse[]>([]);

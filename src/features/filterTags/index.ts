@@ -1,1 +1,1 @@
-export { FilterTags } from "./ui/filterTags.tsx";
+export { FilterTags } from "./ui.tsx";
