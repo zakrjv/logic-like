@@ -1,17 +1,15 @@
 import React from "react";
-import { ICourse } from "@/shared/types";
-import { getTagsList } from "@/shared/lib/helpers.ts";
+import { ICoursesByTag } from "@/shared/types";
 import styles from "./styled.module.scss";
 
 interface Props {
-  data: ICourse[];
+  data: ICoursesByTag;
   currentTag: string;
   setCurrentTag: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export function FilterTags(props: Props) {
   const { data, currentTag, setCurrentTag } = props;
-  const tags = getTagsList(data);
 
   const handleTagClick = (tag: string) => {
     setCurrentTag(tag);
@@ -19,14 +17,7 @@ export function FilterTags(props: Props) {
 
   return (
     <ul className={styles.tags}>
-      <li
-        className={`${styles.item} ${currentTag === "all" ? styles.itemCurrent : ""}`}
-        onClick={() => handleTagClick("all")}
-      >
-        Все темы
-      </li>
-
-      {tags.map(tag => (
+      {Object.keys(data).map(tag => (
         <li
           className={`${styles.item} ${currentTag === tag ? styles.itemCurrent : ""}`}
           key={tag}

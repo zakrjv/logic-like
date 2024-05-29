@@ -5,3 +5,7 @@ export interface ICourse {
   bgColor: string;
   tags: string[];
 }
+
+export interface ICoursesByTag {
+  [tag: string]: ICourse[];
+}
