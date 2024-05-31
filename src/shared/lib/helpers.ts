@@ -1,10 +1,20 @@
-import { ICourse } from "@/shared/types";
+import { ICourse, ICoursesByTag } from "@/shared/types";
+import { TAG_ALL } from "@/shared/lib/contants.ts";
 
-export function getTagsList(courses: ICourse[]): ICourse["tags"] {
-  return Array.from(new Set(courses.flatMap(obj => obj.tags)));
-}
+export function groupCoursesByTags(courses: ICourse[]): ICoursesByTag {
+  return courses.reduce<ICoursesByTag>(
+    (acc, course) => {
+      const tags = course.tags;
 
-export function filterCoursesByTag(courses: ICourse[], tag: string): ICourse[] {
-  if (tag === "all") return courses;
-  return courses.filter(obj => obj.tags.includes(tag));
+      tags.forEach(tag => {
+        if (!acc[tag]) {
+          acc[tag] = [];
+        }
+        acc[tag].push(course);
+      });
+
+      return acc;
+    },
+    { [TAG_ALL]: courses },
+  );
 }
