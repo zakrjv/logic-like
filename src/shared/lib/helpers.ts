@@ -1,8 +1,8 @@
 import { ICourse, ICoursesByTag } from "@/shared/types";
-import { ALL } from "@/shared/lib/contants.ts";
+import { TAG_ALL } from "@/shared/lib/contants.ts";
 
-export function filterCoursesByTag(courses: ICourse[]): ICoursesByTag {
-  return courses.reduce(
+export function groupCoursesByTags(courses: ICourse[]): ICoursesByTag {
+  return courses.reduce<ICoursesByTag>(
     (acc, course) => {
       const tags = course.tags;
 
@@ -15,6 +15,6 @@ export function filterCoursesByTag(courses: ICourse[]): ICoursesByTag {
 
       return acc;
     },
-    { [ALL]: courses } as ICoursesByTag,
+    { [TAG_ALL]: courses },
   );
 }

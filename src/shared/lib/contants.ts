@@ -1,1 +1,1 @@
-export const ALL = "Все темы";
+export const TAG_ALL = "Все темы";
