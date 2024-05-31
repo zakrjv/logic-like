@@ -21,7 +21,7 @@
   }
 
   @media (hover: hover) {
-    &:hover:not(&--current) {
+    &:hover:not(&Current) {
       color: variables.$border;
     }
   }
